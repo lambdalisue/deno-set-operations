@@ -1,0 +1,43 @@
+name: Test
+
+env:
+  DENO_VERSION: 1.x
+
+on:
+  schedule:
+    - cron: "0 7 * * 0"
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@main
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+      - name: Lint
+        run: deno lint
+      - name: Format check
+        run: |
+          deno fmt --check
+      - name: Type check
+        run: |
+          deno test --unstable --no-run $(find . -name '*.ts')
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@main
+        with:
+          deno-version: ${{ env.DENO_VERSION }}
+      - name: Test
+        run: |
+          deno test
+        timeout-minutes: 5
