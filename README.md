@@ -2,7 +2,7 @@
 
 [![deno land](http://img.shields.io/badge/available%20on-deno.land/x-lightgrey.svg?logo=deno)](https://deno.land/x/set_operations)
 [![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/set_operations/mod.ts)
-[![Test](https://github.com/lambdalisue/deno-set-operations/workflows/Test/badge.svg)](https://github.com/lambdalisue/deno-set-operations/actions?query=workflow%3ATest)
+[![Test](https://github.com/lambdalisue/deno-set-operations/actions/workflows/test.yml/badge.svg)](https://github.com/lambdalisue/deno-set-operations/actions/workflows/test.yml)
 
 This module provides basic set operations. Most of codes are just translated
 from
