@@ -19,10 +19,9 @@ Check if the `setA` has no elements in common with `setB`.
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 import { isDisjoint } from "https://deno.land/x/set_operations/mod.ts";
 
-Deno.test("isSubset works properly", () => {
-  assertEquals(isSubset(new Set("abc"), new Set("abcdef")), true);
-  assertEquals(isSubset(new Set("abc"), new Set("def")), false);
-  assertEquals(isSubset(new Set("abcdef"), new Set("abc")), false);
+Deno.test("isDisjoint works properly", () => {
+  assertEquals(isDisjoint(new Set("abc"), new Set("def")), true);
+  assertEquals(isDisjoint(new Set("abc"), new Set("cde")), false);
 });
 ```
 
